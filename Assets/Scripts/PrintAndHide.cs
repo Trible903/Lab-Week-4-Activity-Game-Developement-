@@ -6,17 +6,18 @@ public class PrintAndHide : MonoBehaviour
 {
     public Renderer rend; 
     int i = 3; 
+    int rand; 
     // Start is called before the first frame update
     void Start()
     {
-    
+        rand = Random.Range(200, 251);  
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(gameObject.name == "Red" && i == 100) gameObject.SetActive(false); 
-        if(gameObject.name == "Blue" && i == Random.Range(200, 250)) rend.enabled = false;
+        if(gameObject.tag == "Red" && i == 100) gameObject.SetActive(false); 
+        if(gameObject.tag == "Blue" && i == rand) rend.enabled = false;
         Debug.Log(gameObject.name + ":" + ++i); 
     }
 }
